@@ -1,0 +1,38 @@
+from Fetch.Connector.Connector import Connector
+
+class GoogleConnector(Connector):
+
+    def __init__(self, word):
+        '''
+        Connector 모델을 실행 시키며 검색할 단어인 Word를 전달한다.
+        :param word: [Type = String] 검색할 단어
+        '''
+        self.word = word
+        self.engine_name = 'Google'
+        super().__init__(self.word)
+        print('-' * 50)
+        print('[System] Google connector on')
+        print('-' * 50)
+
+    def google_get_real_url(self):
+        '''
+        구글 검색엔진 URL을 통해 Get 으로 검색 화면을 찾는다.
+        :return: [Type = 'http.client.HTTPResponse'] URL
+        '''
+        self.url = 'https://www.google.com/search?q=' + self.word + \
+                   '&sxsrf=AOaemvJMIbwvVgP-1T0hUh2OuF_Io6niUw%3A1631154201497&source=hp&ei=GXA5YfXoG8TP-Qa9pKbgBg&iflsig=ALs-wAMAAAAAYTl-KXt24Vr4nWoqYmTc1AYcBO5TBzPO&oq=' + \
+                   self.word + \
+                   '&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECcyBAgjECcyBAgjECcyCAgAEIAEELEDMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgcIIxDqAhAnOgsIABCABBCxAxCDAToHCAAQgAQQCjoJCAAQgAQQChAqOgQIABBDUN8JWJIXYKwYaAdwAHgEgAGfAYgB4QqSAQQwLjEymAEAoAEBsAEK&sclient=gws-wiz&ved=0ahUKEwi12YH26vDyAhXEZ94KHT2SCWwQ4dUDCAc&uact=5'
+
+        real_url = super().search_engine(self.url)
+        return real_url
+
+    def set_num_link_pool(self, links):
+        self.num_link_pool = links
+
+    def is_in_num_link_pool(self, link, engine):
+        return True if self.num_link_pool in link else False
+
+    def append_num_link_pool(self, link, engine):
+        self.num_link_pool.append(link)
+
