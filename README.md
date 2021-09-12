@@ -58,7 +58,7 @@ Master/Slave 모델을 따르는 Architecture
    * Monitor를 통해 Frontier의 일부 기능을 실시간으로 제어할 수 있다.
 
 
-<div align="right"><a href ="hhttps://lyb1495.tistory.com/104">참조 - 웹 크롤러 아키텍처</a></div>
+<div align="right"><a href="https://lyb1495.tistory.com/104">참조 - 웹 크롤러 아키텍처</a></div>
 
  <br>
 
