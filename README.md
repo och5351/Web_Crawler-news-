@@ -33,7 +33,7 @@ Master/Slave 모델을 따르는 Architecture
 * Master(Frontier) : 서버역할을 하며 Agent가 수집한 URL을 전송받아 관리하게 되며, 필터링된 URL을 다시 Agent로 분배한다.
 <br>
 
-   * 각 Agent가 방문해야 할 URL과 다운로드 해야 하는 Resource URL 목록을 보관한다.
+   * * 각 Agent가 방문해야 할 URL과 다운로드 해야 하는 Resource URL 목록을 보관한다.
    * Agent가 새로 수집한 URL을 전송하면 필터링을 수행한 후 남겨진 URL을 방문해야 할 URL 목록에 추가한다.
    * Agent로 방문해야 할 URL을 분배한다.
    * 방문해야 할 URL 목록이 모두 소진될 때 까지 위 3단계를 반복한다.
@@ -79,19 +79,25 @@ Master/Slave 모델을 따르는 Architecture
 <br>
 
 1. Connect Agent 기능
+<br>
+
    1-1. 정해 놓은 검색엔진과 검색어의 검색 결과(URL) 수집.
    1-2. URL Response를 Collect Agent 로 전달.
    1-3. 처음 수집한 페이지 넘버를 확인 후 Queue 구성 후 Collect에 전달 받은 정보 비교 삽입
-<br>
+<br><br>
 
 2. Collect Agent 기능
-   2-1. Connect Agent 에게 넘겨 받은 URL Response의 HTML 수집.
-   2-2. Connect Agent 에게 넘겨 받은 HTML 분석 후 페이지 넘버 추출 및 Connect에 전달
 <br>
 
+   2-1. Connect Agent 에게 넘겨 받은 URL Response의 HTML 수집.
+   2-2. Connect Agent 에게 넘겨 받은 HTML 분석 후 페이지 넘버 추출 및 Connect에 전달
+<br><br>
+
 3. Save Agent 기능
-   3-1. Collect Agent에서 수집한 HTML을 지정된 PC에 저장.
 <br>
+
+   3-1. Collect Agent에서 수집한 HTML을 지정된 PC에 저장.
+<br><br>
 
 [추가 될 기능]
 
