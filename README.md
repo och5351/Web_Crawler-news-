@@ -33,10 +33,10 @@ Master/Slave 모델을 따르는 Architecture
 * Master(Frontier) : 서버역할을 하며 Agent가 수집한 URL을 전송받아 관리하게 되며, 필터링된 URL을 다시 Agent로 분배한다.
 <br>
 
-   * * 각 Agent가 방문해야 할 URL과 다운로드 해야 하는 Resource URL 목록을 보관한다.
-   * Agent가 새로 수집한 URL을 전송하면 필터링을 수행한 후 남겨진 URL을 방문해야 할 URL 목록에 추가한다.
-   * Agent로 방문해야 할 URL을 분배한다.
-   * 방문해야 할 URL 목록이 모두 소진될 때 까지 위 3단계를 반복한다.
+    * 각 Agent가 방문해야 할 URL과 다운로드 해야 하는 Resource URL 목록을 보관한다.
+    * Agent가 새로 수집한 URL을 전송하면 필터링을 수행한 후 남겨진 URL을 방문해야 할 URL 목록에 추가한다.
+    * Agent로 방문해야 할 URL을 분배한다.
+    * 방문해야 할 URL 목록이 모두 소진될 때 까지 위 3단계를 반복한다.
 
   <br><br>
 
