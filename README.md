@@ -33,31 +33,32 @@ Master/Slave 모델을 따르는 Architecture
 * Master(Frontier) : 서버역할을 하며 Agent가 수집한 URL을 전송받아 관리하게 되며, 필터링된 URL을 다시 Agent로 분배한다.
 <br>
 
-  * 각 Agent가 방문해야 할 URL과 다운로드 해야 하는 Resource URL 목록을 보관한다.
-  * Agent가 새로 수집한 URL을 전송하면 필터링을 수행한 후 남겨진 URL을 방문해야 할 URL 목록에 추가한다.
-  * Agent로 방문해야 할 URL을 분배한다.
-  * 방문해야 할 URL 목록이 모두 소진될 때 까지 위 3단계를 반복한다.
+   * 각 Agent가 방문해야 할 URL과 다운로드 해야 하는 Resource URL 목록을 보관한다.
+   * Agent가 새로 수집한 URL을 전송하면 필터링을 수행한 후 남겨진 URL을 방문해야 할 URL 목록에 추가한다.
+   * Agent로 방문해야 할 URL을 분배한다.
+   * 방문해야 할 URL 목록이 모두 소진될 때 까지 위 3단계를 반복한다.
 
   <br><br>
 
 * Slave(Agent) : Frontier로부터 URL을 전송받아, 해당 URL의 웹페이지(HTML)를 처리한다. 웹페이지 처리 결과로 다른 웨페이지에 대한 URL Link와 이미지 등의 리소스 URL Link를 추출한다. 추출된 모든 URL Link는 Frontier로 전송
 <br>
 
-  * Frontier로 부터 전송받은 URL을 HTTP 프로토콜을 이용해 접근한다.
-  * HTTP 응답으로 HTML 문서를 얻어 분석한다.
-  * HTML 문서 분석결과로 다음 방문한 URL Link와 수집해야 할 Resource URL Link를 추출한다.
-  * 새로 수집된 모든 URL을 Frontier로 전송한다.
+   * Frontier로 부터 전송받은 URL을 HTTP 프로토콜을 이용해 접근한다.
+   * HTTP 응답으로 HTML 문서를 얻어 분석한다.
+   * HTML 문서 분석결과로 다음 방문한 URL Link와 수집해야 할 Resource URL Link를 추출한다.
+   * 새로 수집된 모든 URL을 Frontier로 전송한다.
 
   <br><br>
 
 * Monitor : Frontier와 Agent의 동작 상태를 모니터링하고, 제어기능을 포함한다. 
 <br>
 
-  * Frontier와 Agent의 동작상태를 모니터링하며 데이터를 시각적으로 재구성 출력한다.
-  * Frontier와 Agent의 이상(anomaly) 상태를 파악한다.
-  * Monitor를 통해 Frontier의 일부 기능을 실시간으로 제어할 수 있다.
+   * Frontier와 Agent의 동작상태를 모니터링하며 데이터를 시각적으로 재구성 출력한다.
+   * Frontier와 Agent의 이상(anomaly) 상태를 파악한다.
+   * Monitor를 통해 Frontier의 일부 기능을 실시간으로 제어할 수 있다.
 
-<div align="right"><a href ="hhttps://lyb1495.tistory.com/104">참조- 웹 크롤러 아키텍처</a></div>
+
+<div align="right"><a href ="hhttps://lyb1495.tistory.com/104">참조 - 웹 크롤러 아키텍처</a></div>
 
  <br>
 
