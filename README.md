@@ -19,7 +19,7 @@
 2. [임시적 Cralwer 구조](#2)
 
 <br><br>
-<a href="1"></a>
+<a id="1"></a>
 
 ## 1. Crawler 구조
 <br>
@@ -61,7 +61,7 @@ Master/Slave 모델을 따르는 Architecture
 [목차로](#home1) 
 </div><br><br>
  
-<a href="2"></a>
+<a id="2"></a>
 
 ## 2. 임시적 Cralwer 구조
 <br>
