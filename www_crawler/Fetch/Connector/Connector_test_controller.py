@@ -1,4 +1,4 @@
-from Connector_agent import Connector_agent
+from Fetch.Connector.Connector_agent import Connector_agent
 from Fetch.Collector.Collector_agent import Collector_agent
 
 if __name__ == '__main__':
@@ -15,4 +15,13 @@ if __name__ == '__main__':
 
     htmls = coll_agent.page_get_html(urls=first_real_url)
 
-    coll_agent.get_page_num(htmls)
+    page_num = coll_agent.get_page_num(htmls)
+
+    conn_agent.check_num_link(page_num)
+    num_list = conn_agent.get_pool()
+
+    for engine in num_list.keys():
+        print(engine)
+        for link in num_list[engine]:
+            print(link)
+

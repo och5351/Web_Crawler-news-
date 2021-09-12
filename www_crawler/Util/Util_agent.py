@@ -17,16 +17,19 @@ class Util_agent(object):
         :param encoding: [type = String] default utf-8
         :return: x
         '''
-        d = datetime.datetime.now()
-        date = str(d.year) + str(d.day).zfill(2) + str(d.day).zfill(2) + str(d.hour).zfill(2) + str(d.minute).zfill(2) + str(d.second).zfill(2)
-        name = engine.upper() + '_' + str(len(os.listdir(path)))+'_'+ date
-        file_path_name = path+'/'+name+'.html'
+        if data:
+            d = datetime.datetime.now()
+            date = str(d.year) + str(d.day).zfill(2) + str(d.day).zfill(2) + str(d.hour).zfill(2) + str(d.minute).zfill(2) + str(d.second).zfill(2)
+            name = engine.upper() + '_' + str(len(os.listdir(path)))+'_'+ date
+            file_path_name = path+'/'+name+'.html'
 
-        f = open(file_path_name, 'w', encoding=encoding)
-        f.write(str(data))
-        f.close()
+            f = open(file_path_name, 'w', encoding=encoding)
+            f.write(str(data))
+            f.close()
 
-        print('[Message]Util agent : ', file_path_name , ' save complete.')
+            print('[Message]Util agent : ', file_path_name, ' save complete.')
+        else:
+            print("[Failure Message]Util agent : Can't save data. It's empty.")
 
     def util_mkdir(self, engine):
         '''

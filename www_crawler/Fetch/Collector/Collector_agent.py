@@ -47,7 +47,7 @@ class Collector_agent(Collector):
         네이버의 경우 현재 페이지의 링크가 나옴
         구글의 경우 현재 페이지의 링크는 나오지 않고 다음 페이지 링크부터 나옴
         :param htmls:
-        :return:
+        :return: [Type = Dictionary] page_num_dic ( key = 'Naver' or 'Google' ... : Value = page_num_url )
         '''
 
         page_num_dic = {}

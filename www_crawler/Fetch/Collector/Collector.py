@@ -9,6 +9,10 @@ class Collector(object):
         '''
         :return: beautifulsoup 검색엔진 검색 결과 html
         '''
-        soup = beauty(url, 'html.parser', from_encoding='utf-8')
+        if url:
+            soup = beauty(url, 'html.parser', from_encoding='utf-8')
+        else:
+            soup = url
 
         return soup
+

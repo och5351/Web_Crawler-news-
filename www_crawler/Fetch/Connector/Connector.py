@@ -29,6 +29,11 @@ class Connector(object):
         return source_code_from_URL
 
     def url_opener(self, url):
+        '''
+        매개변수로 받은 url을 오픈 하여 return 한다.
+        :param url: [Type = String] url
+        :return: Response HTTP
+        '''
 
         try:
             result = urlopen(url)
@@ -37,8 +42,37 @@ class Connector(object):
 
         return result
 
+    def get_pool(self):
+        '''
+        페이지를 이동할 수 있는 Number 링크들이 담긴 풀의 내용을 확인 가능하다.
+        :return:
+        '''
+        return self.num_link_pool
 
+    def is_in_num_link_pool(self, link):
+        '''
+        페이지를 이동할 수 있는 Number 링크가 풀에 들어있는 지 확인 하는 메소드
+        :param link: [Type = String] 페이지 넘버 URL
+        :return: [Type = Bool] 들어있을 경우 True 아닐 경우 False
+        '''
+        return link in self.num_link_pool
 
+    def append_num_link_pool(self, link):
+        '''
+        풀에 링크를 담는 메소드
+        :param link: [Type = String] URL
+        :return: X
+        '''
+        self.num_link_pool.append(link)
+
+    def pool_pop_left(self):
+        try:
+            return self.num_link_pool.popleft()
+        except:
+            return False
+
+    def pool_is_empty(self):
+        return False if self.num_link_pool else True
 
 
 
